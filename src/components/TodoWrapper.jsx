@@ -1,6 +1,7 @@
 import { useState } from "react";
 import CreateForm from "./CreateForm";
 import Todo from "./Todo";
+import ExportCSV from "./ExportCSV"; // 匯入 ExportCSV 組件
 
 function TodoWrapper() {
 
@@ -49,6 +50,8 @@ function TodoWrapper() {
         todo={todo} key={todo.id} deleteTodo={deleteTodo}/>
       })}
       
+      {/* 使用 ExportCSV 組件，將 todos 當作 props 傳入 */}
+      <ExportCSV todos={todos} />
     </div>
   );
 }
